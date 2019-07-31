@@ -1,0 +1,22 @@
+{
+  "name": "safe-navigator",
+  "version": "1.0.0",
+  "description": "safe navigator for javascript",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anand-jain-official/safe-navigator.git"
+  },
+  "keywords": [
+    "safe",
+    "navigator",
+    "elvis",
+    "operator"
+  ],
+  "author": "Anand Jain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anand-jain-official/safe-navigator/issues"
+  },
+  "homepage": "https://github.com/anand-jain-official/safe-navigator#readme"
+}
