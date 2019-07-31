@@ -1,12 +1,14 @@
 function safe(obj, exp) { 
-	const s = exp.split('.');
-	let val = obj;
-	let i;
-	try { 
-		for(i = 0; i < s.length; i++) { 
-		val = val[s[i]];
+	
+        if (typeof obj !== "object" || typeof exp !== "string") return undefined
+        
+        const keyArray = exp.split('.');
+	
+          try { 
+		for(i = 0; i < keyArray.length; i++) { 
+		   obj = obj[keyArray[i]];
 	 	}
-		return val;
+		return obj;
 	 } catch(err) { 
 		return undefined;	
 	 }
