@@ -11,7 +11,10 @@
     "safe",
     "navigator",
     "elvis",
-    "operator"
+    "operator",
+    "navigation",
+    "?",
+    "javascript"
   ],
   "author": "Anand Jain",
   "license": "MIT",
