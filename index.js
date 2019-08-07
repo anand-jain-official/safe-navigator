@@ -1,15 +1,1 @@
-function safe(obj, exp) {
-		if(!exp) return obj; 
-        if (typeof obj !== "object" || typeof exp !== "string") return undefined
-        const keyArray = exp.split('.');
-          try { 
-		for(i = 0; i < keyArray.length; i++) { 
-		   obj = obj[keyArray[i]];
-	 	}
-		return obj;
-	 } catch(err) { 
-		return undefined;	
-	 }
- }
-
- module.exports = safe;
+module.exports=function safe(obj,exp){if(!exp){return obj};if(typeof obj !== "object" || typeof exp !== "string"){return undefined};const keyArray = exp.split('.');try{for(i=0;i<keyArray.length;i++){let prevObj=obj;obj=obj[keyArray[i]];if(obj==undefined){const sqOpenBr=keyArray[i].indexOf('[');const sqCloseBr=keyArray[i].indexOf(']');if(sqOpenBr>-1&&sqCloseBr>-1){let indx=keyArray[i].slice(sqOpenBr+1,sqCloseBr);let arrName=keyArray[i].slice(0,sqOpenBr);if(!Array.isArray(prevObj[arrName])&&!typeof(prevObj[arrName]==String))return undefined;obj=prevObj[arrName][parseInt(indx)];}}}return obj;}catch(err){return undefined;}};
