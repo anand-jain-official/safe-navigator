@@ -1,9 +1,7 @@
-function safe(obj, exp) { 
-	
+function safe(obj, exp) {
+		if(!exp) return obj; 
         if (typeof obj !== "object" || typeof exp !== "string") return undefined
-        
         const keyArray = exp.split('.');
-	
           try { 
 		for(i = 0; i < keyArray.length; i++) { 
 		   obj = obj[keyArray[i]];
