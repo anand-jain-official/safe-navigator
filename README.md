@@ -40,7 +40,7 @@ v1.1.0 : Added support for accessing array in a nested javascript object.
         };
 
         console.log(safe(farm, 'farmer.farmAnimals[0]')); // will return 'Horse'
-        console.log(safe(farm, 'farmer.animalDetails[0].horse.name)); // will return 'john';
+        console.log(safe(farm, 'farmer.animalDetails[0].horse.name')); // will return 'john';
         
         Note: 2D or multi-dmensional arrays are not natively supported in the string passed to safe.
 
