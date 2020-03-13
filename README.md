@@ -5,7 +5,7 @@ A safe navigation operator for javascript that allows you to access nested objec
 Install with `npm i safe-navigator`
 
 ## How does it work ?
-If you want to access **obj.key1.key2.key3**, you can import the package as safe and try **safe(obj, "key1.key2.key3")** and even if key1 does not contain a key called key2 and you try to access key3 in an undefined value of key2, the function will return the value of undefined without throwing an error.
+If you want to access **obj.key1.key2.key3**, you can import the package as safe and try **safe(obj, "key1.key2.key3")** and even if key1 does not contain a key called key2 and you try to access key3 in an undefined value of key2, the function will return the value of undefined without throwing an error. If you pass a third argument to **safe(obj, "key1.key2.key3", [])**, incase the value is undefined, the fallback will be returned by safe.
 
 If you don't pass a second parameter to the function, the object passed as first parameter will be returned.
 
@@ -13,6 +13,7 @@ If you dont return any parameters, the function will return undefined.
 
 #Updates
 v1.1.0 : Added support for accessing array in a nested javascript object.
+v1.1.1 : Added a fallback as third argument to safe function
 
 ## Example: 
     
@@ -27,6 +28,9 @@ v1.1.0 : Added support for accessing array in a nested javascript object.
     const farm = { farmer: { name: 'Steve' } };
     console.log(safe(farm, 'farmer.name.age.old')); // undefined.
     console.log(safe(farm, 'farmer.name')); // will return 'Steve'
+
+    Update v1.1.1: Fallback
+    console.log(safe(farm, 'farmer.name.age.old', "fallback")); // will return 'fallback'.
 
     Update v1.1.0: Arrays inside nested Objects
 
