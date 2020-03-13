@@ -13,7 +13,7 @@ If you dont return any parameters, the function will return undefined.
 
 #Updates
 v1.1.0 : Added support for accessing array in a nested javascript object.
-v1.1.1 : Added a fallback as third argument to safe function
+v1.1.2 : Added a fallback as third argument to safe function
 
 ## Example: 
     
